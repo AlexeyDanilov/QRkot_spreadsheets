@@ -28,4 +28,4 @@ async def get_report(
     await spreadsheets_update_value(spreadsheetid,
                                     closed_projects,
                                     wrapper_services)
-    return BASE_URL + spreadsheetid
+    return {"report_url": BASE_URL + spreadsheetid}
