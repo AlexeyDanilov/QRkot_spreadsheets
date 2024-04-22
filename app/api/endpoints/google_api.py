@@ -10,6 +10,8 @@ from app.services.google_api import spreadsheets_create, set_user_permissions, s
 
 router = APIRouter()
 
+BASE_URL = 'https://docs.google.com/spreadsheets/d/'
+
 
 @router.post(
     '/',
@@ -26,4 +28,4 @@ async def get_report(
     await spreadsheets_update_value(spreadsheetid,
                                     closed_projects,
                                     wrapper_services)
-    return closed_projects
+    return BASE_URL + spreadsheetid
